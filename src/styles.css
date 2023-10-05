@@ -1,0 +1,114 @@
+.slider {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  width: 95%;
+  padding-top: 30px;
+}
+
+.navigation-left,
+.navigation-right {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.slides {
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  display: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide.active {
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  width: 700px;
+  height: 100%;
+}
+
+.slide span {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+
+.slide img {
+  max-width: 100%;
+  min-width: 500px;
+  height: 100%;
+}
+
+.preview {
+  margin: 0 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 3px solid gray;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.preview.active {
+  display: none;
+}
+
+.navigation-next-prev .next-prev {
+  position: absolute;
+  top: 50%;
+  font-size: 1.5em;
+  cursor: pointer;
+  transform: translateY(-100%);
+  z-index: 10000;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .navigation-left,
+  .navigation-right {
+    display: none;
+  }
+}
+
+.navigation-bottom {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dots.active {
+  background: skyblue;
+}
